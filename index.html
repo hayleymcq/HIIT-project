@@ -28,6 +28,16 @@
         font-family: "Josefin Sans";
       }
 
+      .dark {
+        background-color: #0b3f08;
+        color: rgba(250, 235, 215);
+      }
+
+      .dark button {
+        background-color: rgba(250, 235, 215);
+        color: #f77c14;
+      }
+
       h1 {
         font-size: 44px;
         font-weight: 800;
@@ -40,7 +50,7 @@
 
       button {
         color: rgb(203, 150, 225);
-        background-color: #116c0d;
+        background-color: #10630c;
         border-style: none;
         font-size: 14px;
         padding: 3px;
@@ -98,7 +108,7 @@
     </style>
   </head>
   <body>
-    <button>Dark Theme</button>
+    <div class="dark-theme"><button>Change Theme</button></div>
     <div class="contain">
       <h1>HIIT</h1>
       <h2>Make Your Workout Efficient and FUN</h2>
@@ -172,5 +182,18 @@
         >
       </footer>
     </div>
+    <script>
+      let themeButton = document.querySelector(".dark-theme");
+      themeButton.addEventListener("click", changeTheme);
+
+      function changeTheme() {
+        let body = document.querySelector("body");
+        if (body.classList.contains("dark")) {
+          body.classList.remove("dark");
+        } else {
+          body.classList.add("dark");
+        }
+      }
+    </script>
   </body>
 </html>
